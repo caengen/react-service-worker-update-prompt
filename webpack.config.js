@@ -10,6 +10,10 @@ const config = {
   module: {
     rules: [
       {
+        test: /\.svg$/,
+        use: "file-loader"
+      },
+      {
         test: /\.(js|jsx)$/,
         use: "babel-loader",
         exclude: /node_modules/
