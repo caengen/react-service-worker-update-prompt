@@ -2,13 +2,14 @@
   "name": "react-service-worker-update-prompt",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "build/bundle.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/caengen/react-service-worker-update-prompt"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack --watch",
+    "build": "webpack"
   },
   "author": "Christian Engen",
   "license": "ISC",
