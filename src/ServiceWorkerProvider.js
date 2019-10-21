@@ -51,11 +51,7 @@ function ServiceWorkerProvider({ register }) {
   return <ServiceWorkerContext.Provider value={value} {...props} />;
 }
 ServiceWorkerProvider.propTypes = {
-  register: PropTypes.func({
-    onRegister: PropTypes.func,
-    onUpdate: PropTypes.func,
-    onSuccess: PropTypes.func
-  })
+  register: PropTypes.func.isRequired
 };
 
 function useServiceWorker() {
