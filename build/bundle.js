@@ -242,12 +242,11 @@
   function Message(props) {
     return React__default.createElement("div", {
       className: props.className,
-      style: assetsUpdateReady ? styles.prompt : styles.hidden
+      style: props.visible ? styles.prompt : styles.hidden
     }, React__default.createElement("p", null, props.message), React__default.createElement("button", {
       style: styles.button,
       type: "button",
-      onClick: props.onClick,
-      disabled: !visible
+      onClick: props.onClick
     }, props.buttonText), React__default.createElement("button", {
       style: styles.dismiss,
       type: "button",
@@ -259,7 +258,8 @@
     message: PropTypes.string.isRequired,
     buttonText: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired,
-    onDismiss: PropTypes.func
+    onDismiss: PropTypes.func,
+    visible: PropTypes.bool
   };
 
   // import Loading from "./assets/svg/loading.svg";
@@ -291,7 +291,8 @@
 
     return visible && React__default.createElement(Message, _extends({}, props, {
       onClick: handleClick,
-      onDismiss: dismiss
+      onDismiss: dismiss,
+      visible: visible
     }));
   }
   UpdatePrompt.propTypes = {

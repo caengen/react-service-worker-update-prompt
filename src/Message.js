@@ -60,14 +60,13 @@ export function Message(props) {
   return (
     <div
         className={props.className}
-        style={assetsUpdateReady ? styles.prompt : styles.hidden}
+        style={props.visible ? styles.prompt : styles.hidden}
       >
         <p>{props.message}</p>
         <button
           style={styles.button}
           type="button"
           onClick={props.onClick}
-          disabled={!visible}
         >
           {props.buttonText}
           {/* {loading && (
@@ -90,5 +89,6 @@ Message.propTypes = {
   message: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
-  onDismiss: PropTypes.func
+  onDismiss: PropTypes.func,
+  visible: PropTypes.bool
 }
