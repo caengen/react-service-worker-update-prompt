@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const buttonCommon = {
   display: "flex",
@@ -83,4 +84,11 @@ export function Message(props) {
         </button>
       </div>
   );
+}
+Message.propTypes = {
+  className: PropTypes.string,
+  message: PropTypes.string.isRequired,
+  buttonText: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  onDismiss: PropTypes.func
 }

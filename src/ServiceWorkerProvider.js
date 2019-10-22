@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 const ServiceWorkerContext = React.createContext();
 
-function ServiceWorkerProvider({ register }) {
+export function ServiceWorkerProvider({ register }) {
   const [waiting, setServiceWorker] = useState(null);
   const [assetsUpdateReady, setAssetsUpdateReady] = useState(false);
   const [assetsCached, setAssetsCached] = useState(false);
@@ -54,7 +54,7 @@ ServiceWorkerProvider.propTypes = {
   register: PropTypes.func.isRequired
 };
 
-function useServiceWorker() {
+export function useServiceWorker() {
   const context = React.useContext(ServiceWorkerContext);
 
   if (!context) {
@@ -66,4 +66,3 @@ function useServiceWorker() {
   return context;
 }
 
-export { ServiceWorkerProvider, useServiceWorker };
