@@ -117,9 +117,7 @@
   }
 
   var ServiceWorkerContext = React__default.createContext();
-  function ServiceWorkerProvider(_ref) {
-    var register = _ref.register;
-
+  function ServiceWorkerProvider(props) {
     var _useState = React.useState(null),
         _useState2 = _slicedToArray(_useState, 2),
         waiting = _useState2[0],
@@ -157,7 +155,7 @@
     // CRA's service worker wrapper
 
     React__default.useEffect(function () {
-      register({
+      props.register({
         onRegister: function onRegister(registration) {
           setServiceWorker(registration.waiting);
           setAssetsUpdateReady(!!registration.waiting);

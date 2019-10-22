@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 const ServiceWorkerContext = React.createContext();
 
-export function ServiceWorkerProvider({ register }) {
+export function ServiceWorkerProvider(props) {
   const [waiting, setServiceWorker] = useState(null);
   const [assetsUpdateReady, setAssetsUpdateReady] = useState(false);
   const [assetsCached, setAssetsCached] = useState(false);
@@ -33,7 +33,7 @@ export function ServiceWorkerProvider({ register }) {
   // Once on component mounted subscribe to Update and Succes events in
   // CRA's service worker wrapper
   React.useEffect(() => {
-    register({
+    props.register({
       onRegister: registration => {
         setServiceWorker(registration.waiting);
         setAssetsUpdateReady(!!registration.waiting);
