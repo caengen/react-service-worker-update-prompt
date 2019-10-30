@@ -44,7 +44,7 @@ export default {
     }),
     resolve(),
     commonjs(),
-    // uglify()
+    uglify()
   ],
 
   external: ['react', 'react-dom', "prop-types"],

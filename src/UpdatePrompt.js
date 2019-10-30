@@ -24,7 +24,7 @@ export function UpdatePrompt(props) {
         {...props}
         onClick={handleClick}
         onDismiss={dismiss}
-        visible={visible}
+        visible={assetsUpdateReady}
       />
     )
   );
